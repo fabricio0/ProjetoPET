@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<meta charset="utf-8">
+	<link rel="shorcut icon" href=".ico">
+	<title>General</title>
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+
+	<section class="sup-nav-bg">
+		<div class="sup-nav">
+			<ul>
+				<li>um </li>
+				<li><a href="#">Cadastrar-se</a> </li>
+				<li><a href="#">Entrar</a></li>
+			</ul>
+		</div>
+	</section>
+	<header class="nav-bg">
+		<nav class="menu-nav">
+			<img src="imagem\LogoIfsp.png" alt="logo ifsp">
+			<div class="menu-nav-topico">
+				<h1>IFSP Câmpus São Carlos</h1>
+				<h2>Ministéro da Educação</h2>
+			</div>
+		</nav>
+	</header>
+	<section class="sub-nav-bg">
+			<div class="sub-nav">
+				<ul>
+					<li><a href="#">Contato e Localização</a></li>
+					<li><a href="http://antigo.scl.ifsp.edu.br" target="_blank" rel="noopener noreferrer">Site antigo </a></li>
+					<li><a href="https://www.ifsp.edu.br/" target="_blank" rel="noopener noreferrer">Site da reitoria </a></li>
+					<li><a href="http://www2.ifsp.edu.br/acessoainformacao//" target="_blank" rel="noopener noreferrer">Acesso à Informação</a></li>
+					<li><a href="http://www2.ifsp.edu.br/ouvidoria/" target="_blank" rel="noopener noreferrer">Ouvidoria</a></li>
+				</ul>
+			</div>
+		</section>
+		
+			
+		<section class="contato">
+				<div class="lateral ativo">
+						<h3>Opções</h3>
+						<div class="Inserir">
+							<h4>Inserir</h4>
+							<ul class="esconder">
+								<li><a href="#">Documentos pessoais</a></li>
+								<li><a href="#">DocumentosAcadêmicos</a></li>
+							</ul>
+							<h4>Exiibir</h4>
+							<ul class="esconder">
+								<li><a href="#" onclick="exibirgra();">Graduação</a></li>
+								<li><a href="#" onclick="exibirmes();">Mestrado</a></li>
+								<li><a href="#" onclick="exibirdou();">Doutorado</a></li>
+								<li><a href="#" onclick="exibirdad();">Dados Pessoais</a></li>
+							</ul>
+							<h4>Deletar</h4>
+							<ul class="esconder">
+								<li><a href="#" onclick="excluirdocs();">Documentos Pessoais</a></li>
+								<li><a href="#" onclick="excluiraca();">Documentos Acadêmicos</a></li>
+							</ul>
+						</div>
+					</div>
+			<div class="largura-pessoais">
+		<form enctype="multipart/form-data" method="POST" action="docpessoais.php">
+  	<input type="hidden" name="MAX_FILE_SIZE" value="61440">
+  
+  	<fieldset class="dados-pessoais">
+  		<h4>Inserir Documentos Pessoais</h4>
+  		<label>Escolha seu tipo de documento</label>
+    		<select name="area1">
+      			<option value="" disabled selected>Escolha sua opção</option>
+      			<option value="RG">RG</option>
+      			<option value="CPF">CPF</option>
+     			 <option value="endereco">  COMPROVANTE DE ENDEREÇO</option>
+    		</select>
+        <span>File</span>
+        <input type="file" name="arquivo1">   
+       
+  </fieldset>
+  <br />
+  <fieldset class="dados-pessoais especial">
+      <h4>Inserir Documentos Pessoais</h4>
+        <select name="area2">
+            <option value="" disabled selected>Escolha sua opção</option>
+            <option value="RG">RG</option>
+            <option value="CPF">CPF</option>
+           <option value="endereco">COMPROVANTE DE ENDEREÇO</option>
+        </select>
+       <label>Escolha sua Área</label>
+        <span>File</span>
+        <input type="file" name="arquivo2">
+  </fieldset>
+  
+
+  <div style="margin-top: 30px;" class="enviar-pessoais">
+    	<button type="submit" name="action">Enviar</button>
+	</div>  
+  	</form>
+			</div>
+		</section>		
+		
+	<section class="container-modal" data-modal="container">
+	<div class="modal">
+    <h4>Entrar</h4>
+    <form method="POST" action="login.php">
+    		<button>x</button>
+            <label for="email">Email</label>
+            <input  name="email" id="email" type="email">
+           <label for="senha">Senha</label>
+            <input  name="senha" id="senha" type="password">
+           
+      		<h6 class="center">Ou</h6>  
+      		<label for="codigo">Codigo</label>
+            <input  name="codigo" id="codigo" type="email">
+             <label for="senha2">Senha</label>
+            <input  name="senha2" id="senha2" type="password">
+           
+          <button type="submit" name="action">Entrar</button>
+    </form>		
+</div>
+	</section>
+
+<section class="modal-cadastro">
+	<div class="modal">
+	   <button>x</button>
+      <h4>Dados Cadastrais</h4>
+    <form class="col s12" method="POST" action="cadastrar.php">
+          <label for="first_nome">Primeiro Nome</label>
+          <input id="first_nome" name="first_nome" type="text">
+          <label for="ultimo_nome">Último Nome</label>
+          <input id="ultimo_nome" name="ultimo_nome" type="text">
+          <label for="emails">Email</label>
+          <input  name="email" id="emails" type="email">
+          <label for="data">Data nascimento</label> 
+          <input type="date" name="data" id="data">
+          <label for="senhas">Senha</label>
+          <input id="senhas" name="senha" type="password">
+          <label for="confirmar_senha">Confirmar Senha</label>
+          <input  name="confirmar_senha" id="confirmar_senha" type="password">
+    	  <label for="cate">Escolha uma categoria</label>        
+   		  <select id="cate" name="categoria">
+		      <option value="" disabled selected>Escolha uma categoria</option>
+		      <option value="1">Professor</option>
+		      <option value="2">Administrativo</option>
+		      <option value="3">Terceirizados</option>
+		  </select>     
+		 <label for="areaa">Escolha uma Área</label>	      
+	    <select id="areaa" name="area">
+	      <option value="" disabled selected>Escolha uma Área</option>
+	      <option value="1">Informática</option>
+	      <option value="2">Gestão</option>
+	      <option value="3">Aeronave</option>
+	    </select>
+  	<button type="submit" name="action">Cadastrar</button>
+	</form>
+</div>
+</section>
+
+
+
+	
+	
+
+
+
+<script type="text/javascript" src="js/cmp.js"></script>
+</body>
+</html>

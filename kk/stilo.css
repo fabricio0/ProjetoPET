@@ -1,0 +1,46 @@
+h1,h2,h3,h4,h5,h6,p,dt,dt,a,dd,ul,li,ol{
+	font-size: 1em;
+	font-weight: none;
+	text-decoration: none;
+	list-style: none;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+.principal{
+	max-width: 960px;
+	margin: 0 auto;
+}
+.lateral{
+	max-width: 210px;
+}
+.lateral h2{
+	border-top: 3px solid #00500f;
+    padding: 12px 12px 5px 10px;
+    height: 32px;
+    background: #eaebee;
+    text-transform: uppercase;
+    font-size: .85em;
+    line-height: 1em;
+    color: #00500f;
+}
+
+.lateral h3{
+    padding: 12px 12px 10px 10px;
+    text-transform: uppercase;
+    font-size: .85em;
+    line-height: 1em;
+    color: #00500f;
+    cursor: pointer;
+}
+.lateral h3:after{
+	content: '▼';
+	margin-left: 10px;
+}
+.sobe h3:after{
+	content: '▲';
+	margin-left: 10px;
+}
+.esconder, .esconde{
+	display: none;
+}

@@ -1,0 +1,459 @@
+/* tamanho logo 3em; 25px 16px */
+$background-vd-escuro:  #fff;
+$background-vd-escuros:  #fff;
+// #4de;
+$cor-head: #fff;
+$font-sup-sub: .88em;
+$font-ifsp: "open_sansextrabold",'Open Sans',Arial,Helvetica,
+sans-serif;
+$color-sub-tit: #00420c;
+$font-sub-tit: 'Libre Caslon Text', serif;
+$font-family-paragrafo: 'Nunito', sans-serif;
+$color-separadores: #eaebee;;
+$font-modal: 'Playfair Display', serif;;
+$font-tabela: 'Alegreya', serif;
+$background-tabela: #EAEBEE;;
+$background-tabela-g2: #333;
+
+@mixin margen-width{
+  max-width: 960px;
+	margin:  0 auto;
+}
+@mixin titulo-secao($font: $font-sub-tit,$tamanho: 2.2em,$margen: 30px 0 0 0,$color: $color-sub-tit, $l-spacing: -1px){
+  font-family: $font-sub-tit;
+  font-size: $tamanho;
+  margin: $margen;
+  color: $color-sub-tit;
+  letter-spacing: $l-spacing;
+}
+@mixin subtitulo-secao($font: $font-sub-tit,$tamanho: 1.18em,$margen: 30px 0 15px 0,$color: $color-sub-tit){
+  font-family: $font-sub-tit;
+  font-size: $tamanho;
+  margin: $margen;
+  color: $color-sub-tit;
+}
+@mixin paragrafo($font-size: 1rem,$line-height: 1.75em, $font-family: $font-family-paragrafo){
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family;
+}
+a{
+	text-decoration: none;
+}
+body, h1, h2, p, ul, a{
+	margin: 0px;
+	border:0px;
+	padding: 0px;
+}
+
+ul li{
+	list-style: none;
+}
+
+img{
+	display: block;
+	max-width: 100%;
+}
+
+*{
+	box-sizing: border-box;
+}
+.sup-nav-bg, .sub-nav-bg{
+  background: $background-vd-escuro;
+  font-family: $font-family-paragrafo;
+  
+}
+.sub-nav{
+	@include margen-width;
+  font-size: $font-sup-sub;
+  font-family: $font-ifsp;
+  ul{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 0px;
+    li a{
+      color: $cor-head;
+      padding-left: 10px;
+      font-family: $font-family-paragrafo;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+li:nth-child(1) a:after, li:nth-child(2) a:after,li:nth-child(3) a:after, li:nth-child(4) a:after{
+	content: '';
+	display: inline-block;
+	height: 15px;
+	border: 1px $cor-head solid;
+	margin-left: 10px;
+}
+li:last-child a:after{
+	content:'';
+	display: inline-block;
+	height: 15px;
+}
+}
+.sup-nav{
+  @include margen-width;
+  font-family: $font-ifsp;
+  font-size: $font-sup-sub;
+  ul{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 0px;
+  }
+  li {
+    flex-basis: 100px;
+    text-align: end;
+  }
+  li a {
+    color: $cor-head;
+    font-family: $font-family-paragrafo;
+  }
+}
+.nav-bg{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#076117+0,61c419+50,076117+100 */
+background: rgb(7,97,23); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(7,97,23,1) 0%, rgba(97,196,25,1) 50%, rgba(7,97,23,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(7,97,23,1) 0%,rgba(97,196,25,1) 50%,rgba(7,97,23,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(7,97,23,1) 0%,rgba(97,196,25,1) 50%,rgba(7,97,23,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#076117', endColorstr='#076117',GradientType=0 ); /* IE6-9 */
+padding-top: 30px;
+padding-bottom: 35px;
+}
+
+.menu-nav{
+	@include margen-width;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+
+.menu-nav-topico{
+  color: $cor-head;
+  h1{
+    font-family: $font-ifsp;
+    font-size: 2.75em;
+    line-height: .8em;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+h2{
+  font-family: $font-ifsp;
+	font-size: 1.1em;
+	text-transform: uppercase;
+  margin-top: 10px;
+}
+}
+
+.contato{
+  @include margen-width;
+  display: flex;
+  h2{
+    @include titulo-secao;
+  }
+  h2:after,h3:after,p:nth-child(5):after{
+    content: '';
+    display: block;
+    width: 100%;
+    border: 1px #eeeeee solid;
+    // margin-top: 18px;
+  }
+  h3{
+    @include subtitulo-secao;
+      font-weight: bold;
+  }
+   p{
+    @include paragrafo;
+  }
+  a{
+    display: inline;
+  }
+}
+.lista-contato h3{
+	  font-size: 1.1em;
+    color: #333;
+    line-height: 1.3em;
+    font-weight: bold;
+		font-size: 1.18em;
+		margin-top: 30px;
+}
+
+
+span.contato-acesso{
+	font-weight: bold;
+}
+.principal{
+	@include margen-width;
+}
+.lateral{
+  display: none;
+  ul li a{
+    @include paragrafo;
+    margin-left: 10px;
+    color: $color-sub-tit !important;
+  }
+  h3{
+    border-top: 3px solid $color-sub-tit;
+      padding: 12px 12px 5px 10px;
+      height: 42px;
+      background: $color-separadores;
+      text-transform: uppercase;
+      // font-size: .85em;
+      // line-height: 1em;
+      color: $color-sub-tit;
+      @include paragrafo;
+  }
+  h3:after{
+    content: '';
+    width: 100%;
+    border: 0px $color-separadores solid;
+  }
+  h4{
+    padding: 12px 12px 10px 10px;
+    text-transform: uppercase;
+    color: $color-sub-tit;
+    cursor: pointer;
+    @include paragrafo;
+  }
+  h4:after{
+    content: '▼';
+    text-align:right;
+    margin-left: 10px;
+    display: inline;
+  }
+}
+div.lateral.ativo{
+  display: block;
+  width: 190px;
+	max-width: 220px;
+  margin-right: 30px;
+}
+.esconder, .esconde{
+	display: none;
+}
+
+.container-modal,.modal-cadastro{
+	height: 100vh;
+	width: 100%;
+	background: rgba(0,0,0,.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 2000;
+	overflow-y: scroll;
+}
+.container-modal.ativos, .modal-cadastro.ativos{
+	display: flex;
+	justify-content: center;
+  align-items: center;
+}
+.modal{
+  width: 340px;
+	background: white;
+	padding: 20px 40px;
+	border: 4px solid  $background-vd-escuro;
+	box-shadow: 0px 0px 100px 10px white;
+	position: relative;
+  animation: show .5s forwards;
+  font-family: $font-modal;
+  border-radius: 20px;
+}
+.modal-cadastro .modal{
+	background: white;
+	padding: 5px 60px;
+	border: 3px solid $background-vd-escuro;
+	box-shadow: 0px 0px 100px 10px white;
+	position: relative;
+  animation: show .5s forwards;
+  font-family: $font-modal;
+  width: 650px;
+}
+.first-gd{
+  width: 280px;
+  margin-right: 20px;
+}
+.second-gd{
+  width: 300px;
+}
+.modal-cadastro .modal select {
+	display: block;
+	height: 32px;
+	width: 218px;
+}
+.flex-gd{
+  display: flex;
+}
+.modal button:first-child,.btn-fechar{
+	background: tomato;
+	position: absolute;
+	top: -20px;
+	left: 310px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	border: 3px solid $background-vd-escuro;
+	box-sizing: all;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+  box-shadow: 0px 0px 100px 10px white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-fechar{
+  left: 620px !important;
+}
+
+.modal h4{
+  text-transform: uppercase;
+  font-size: 2.7em;
+  font-family: 'Playfair Display', serif;
+}
+.dados-pessoais h4, #deletardados h4{
+	font-size: 2em;
+	font-family: 'Playfair Display', serif;
+	font-weight: normal !important;
+	text-transform: capitalize !important;
+	padding-bottom: 20px;
+}
+#deletardados h4{
+  text-align: center;
+}
+.modal select{
+  width: 259px !important;
+}
+.modal label, .modal h6{
+	font-weight: bold;
+	display: block;
+  line-height: 2em;
+  text-transform: capitalize;
+}
+.modal input{
+	width: 100%;
+  box-sizing: border-box;
+  border: 1px solid $background-vd-escuro;
+}
+.modal h6,.modal h4 {
+	margin: 20px 0px;
+	text-align: center;
+}
+@keyframes show{
+	from{
+		opacity: 0;
+		transform: translate3d(0,-30px,0);
+	}
+	to{
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+}
+
+.dados-pessoais input,.dados-pessoais label,.dados-pessoais span{
+	display: block;
+	font-family: 'Playfair Display', serif;
+}
+fieldset.dados-pessoais{
+	padding: 20px 20px;
+  border: 2px solid #00500f;
+  border-radius: 10px;
+	line-height: 1.6rem;
+}
+
+.largura-pessoais{
+	margin: 30px auto;
+}
+.dados-pessoais.especial{
+	margin-top: 20px;
+}
+.dados-pessoais label, .dados-pessoais span,.dados-pessoais select option{
+	line-height: 1.4em;
+	text-transform: capitalize;
+	font-size: 1.1em;
+}
+.dados-pessoais span{
+	margin-top:7px;
+}
+.dados-pessoais h4{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+}
+.container-modal.ativos .btn-if,.btn-ifs,.enviar-pessoais button{
+  box-sizing: border-box;
+  justify-content: center;
+  background: #00500f;
+  color: #eaebee;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  border: none;
+  text-transform: uppercase;
+  display: block;
+}
+.enviar-pessoais{
+	text-align: center;
+	margin-top: 20px;
+}
+.dados-pessoais select,.dados-pessoais.especial select{
+	text-transform: capitalize;
+	width: 300px;
+}
+.Inserir ul li a{
+	color: #00500f ;
+}
+.Inserir ul li{
+	background: #EAEBEE ;
+	padding: 5px 0;
+}
+.tabela{
+  margin-bottom: 50px;
+  table{
+    border-spacing:0px;
+  }
+  h1{
+    @include margen-width;
+    text-align:center;
+    font-size: 2em;
+    font-weight:bold;
+    margin-top: 50px;
+    font-family: 'Nunito', sans-serif;
+  }
+  table{
+    @include margen-width;
+    text-align:center;
+  }
+  h1:after{
+    content:'';
+    display:block;
+    width:50px;
+    border: 1px solid #2e133c;
+    margin: 0 auto;
+    margin-top:3px;
+    margin-bottom: 25px;
+  }
+  th{
+    font-size:1.3em;
+    font-weight: bold;
+    width: 202px;
+    font-family: $font-tabela;
+    margin-bottom: 20px;
+    background-color: lighten($background-vd-escuro,5);
+    color: $background-tabela;
+  }
+  tr td{
+    font-size:1.2em;
+    padding-top: 10px;
+    padding-bottom:10px;
+    font-family: $font-tabela;
+    text-align: center;
+  }
+  tr:nth-child(odd){
+    color: #333;
+    background: $background-tabela;
+  }
+}

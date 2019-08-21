@@ -1,0 +1,21 @@
+30% prova 1.
+30% prova 2.
+20% atividades.
+20% ead.
+
+pseudo paralelismo - impressão que varios sistemas estão sendo executados ao mesmo tempo, quebrando a ai em diversas partes
+processo - todo programa em execução
+3 ESTADOS DO PROCESSO - PRONTO - EXECUTANDO - BLOQUEADO 
+cada processo tem o tempo para executar -- prioridade - algum erro -- precisa de recurso -- block 
+
+
+create table filme(
+	codigo integer auto_increment,
+	titulo varchar(28),
+	categoria varchar(20),	
+	faixaetaria integer,
+	datalancamento date,
+	codautor integer,
+	primary key(codigo),
+	foreign key(codautor) references autor(codigo) on delete set null on update cascade
+);
